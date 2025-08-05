@@ -1,0 +1,5 @@
+node_modules/
+# Prisma generated client
+generated/
+# Prisma migrations log DB
+prisma/dev.db

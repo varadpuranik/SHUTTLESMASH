@@ -1,0 +1,17 @@
+{
+  "name": "shuttlesmash",
+  "version": "1.0.0",
+  "description": "This repository hosts the planning materials for **Shuttle Up**, a badminton application. Refer to [BLUEPRINT.md](BLUEPRINT.md) for a detailed feature and style guide.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "prisma": "^6.13.0"
+  }
+}
