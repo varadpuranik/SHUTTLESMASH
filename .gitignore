@@ -1,3 +1,8 @@
+ codex/add-badminton-rules-page
+node_modules
+.next
+out
+
 #codex/add-prisma-setup-and-models
 node_modules/
 # Prisma generated client
@@ -8,3 +13,4 @@ prisma/dev.db
 node_modules
 .next
 #main
+ main

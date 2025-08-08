@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
+ codex/add-badminton-rules-page
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+
     "lib": [
       "dom",
       "dom.iterable",
@@ -9,6 +15,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+ main
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,6 +23,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+ codex/add-badminton-rules-page
+    "jsx": "preserve"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+
     "jsx": "preserve",
     "incremental": true
   },
@@ -27,4 +40,5 @@
   "exclude": [
     "node_modules"
   ]
+ main
 }
