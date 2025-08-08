@@ -1,0 +1,65 @@
+// Prisma schema for ShuttleSmash application
+
+// Generator for Prisma Client
+// Output to generated/prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+// Datasource configuration
+// Using PostgreSQL connection string from .env
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model represents players in the application
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String?
+  clubs    Club[]    @relation("ClubMembers")
+  messages Message[]
+  matches  Match[]   @relation("MatchPlayers")
+}
+
+// Club model for grouping users
+model Club {
+  id          Int          @id @default(autoincrement())
+  name        String
+  members     User[]       @relation("ClubMembers")
+  tournaments Tournament[]
+}
+
+// Match model representing games between users
+model Match {
+  id           Int         @id @default(autoincrement())
+  playedAt     DateTime
+  scoreA       Int
+  scoreB       Int
+  players      User[]      @relation("MatchPlayers")
+  tournament   Tournament? @relation(fields: [tournamentId], references: [id])
+  tournamentId Int?
+}
+
+// Message model for user communications
+model Message {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
+
+// Tournament model for organized competitions
+model Tournament {
+  id        Int      @id @default(autoincrement())
+  name      String
+  startDate DateTime
+  club      Club     @relation(fields: [clubId], references: [id])
+  clubId    Int
+  matches   Match[]
+}

@@ -1,3 +1,4 @@
+ codex/add-badminton-rules-page
 import Link from 'next/link';
 
 export default function Home() {
@@ -13,6 +14,14 @@ export default function Home() {
           </li>
         </ul>
       </nav>
+
+import Scoreboard from '../components/Scoreboard';
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen items-center justify-center">
+      <Scoreboard />
+ main
     </main>
   );
 }
