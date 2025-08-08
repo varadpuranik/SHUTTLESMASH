@@ -38,6 +38,8 @@ model Club {
 model Match {
   id           Int         @id @default(autoincrement())
   playedAt     DateTime
+  scoreA       Int
+  scoreB       Int
   players      User[]      @relation("MatchPlayers")
   tournament   Tournament? @relation(fields: [tournamentId], references: [id])
   tournamentId Int?
